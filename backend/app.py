@@ -9,10 +9,10 @@ from database.db import init_db  # noqa: E402
 from presentation.api import make_server  # noqa: E402
 
 if __name__ == "__main__":
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", 8000))
     init_db()
     try:
-        server = make_server("127.0.0.1", port)
+        server = make_server(os.environ.get("HOST", "127.0.0.1"), port)
     except OSError:
         print("\nPort %d is already in use (FishMatch may already be running in another window)." % port)
         print("Close that window, or use another port:  python app.py %d" % (port + 1))
