@@ -1,0 +1,8 @@
+{
+  "google_client_id": "1234567890-abcdefg.apps.googleusercontent.com",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": "587",
+  "smtp_user": "yourname@gmail.com",
+  "smtp_password": "your-16-letter-app-password",
+  "smtp_from": "FishMatch <yourname@gmail.com>"
+}
