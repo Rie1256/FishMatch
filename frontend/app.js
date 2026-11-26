@@ -1,3 +1,117 @@
+(function(){try{var s=document.createElement('style');s.id='fm-extra-css';s.textContent=`
+/* ===== MOBILE: side menu on the left ===== */
+@media (max-width:640px){
+  html,body{-webkit-text-size-adjust:100%;overflow-x:hidden;max-width:100vw}
+  body{font-size:16px}
+  input,select,textarea{font-size:16px!important}
+  .app{display:block;padding:0 0 0 72px;gap:0}
+  main{padding:56px 12px 20px;min-width:0}
+  .top{gap:10px;margin-bottom:14px}
+  .top h1{font-size:24px;min-width:0}
+  .chip{display:none}
+  .card{border-radius:16px;padding:16px;margin-bottom:12px;min-width:0;max-width:100%;box-sizing:border-box}
+  .card h3{font-size:15px}
+  .btn,.btn-create,.btn-login{min-height:46px;font-size:16px;border-radius:12px}
+  .filters{grid-template-columns:1fr}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;left:0;top:0;bottom:0;right:auto;width:68px;height:100%;z-index:50;
+    flex-direction:column;justify-content:flex-start;align-items:stretch;gap:2px;padding:10px 4px;
+    border-radius:0 18px 18px 0;overflow-y:auto;overflow-x:hidden;box-sizing:border-box}
+  .side .lgcard,.side .logo,.sidepro,.sp,.side::after{display:none}
+  .nav{flex:0 0 auto;flex-direction:column;gap:3px;padding:8px 2px;text-align:center;justify-content:center;
+    font-size:9px;line-height:1.1;white-space:normal;word-break:break-word;box-shadow:none!important;border-radius:12px}
+  .nav svg{width:24px;height:24px}
+  .nav.on{background:rgba(255,255,255,.18)}
+  body:has(.app) #langpick{bottom:auto;top:8px}
+  .card:has(table),.tw,.tablewrap{overflow-x:auto}
+  table{display:block;overflow-x:auto;max-width:100%}
+}
+
+
+/* ===== MOBILE COMPACT: shorter pages on phone ===== */
+@media (max-width:640px){
+  .app{padding-left:68px}
+  .side{width:64px}
+  .nav{font-size:8px;letter-spacing:-.2px}
+  main{padding:50px 8px 12px}
+  .top{margin-bottom:8px}
+  .top h1{font-size:20px}
+  .card{padding:12px;margin-bottom:8px;border-radius:14px}
+  .card h3{font-size:13px;margin-bottom:4px}
+  .big{font-size:26px}
+  .fish{display:none}
+  .gauge{margin-top:4px}.gauge svg{display:none}.gauge b{font-size:18px;margin:2px 0}
+  .dots{height:12px;margin:6px 0}
+  .btn,.btn-create,.btn-login{min-height:40px;font-size:15px}
+  .hero{display:none}
+  table{font-size:12px}
+  th,td{padding:6px 4px}
+  .grid{gap:8px}
+}
+
+
+/* ===== MOBILE PROFILE: compact ===== */
+@media (max-width:640px){
+  .av.xl{width:76px;height:76px;font-size:30px;border-width:3px}
+  .pcard h2{font-size:18px;margin:8px 0 4px}
+  .pcard .pbio{font-size:13px;margin:8px 0;line-height:1.4}
+  .pcard .phint,.pcard .pinfo,.pcard .since{display:none}
+  .pgrid,.form{gap:8px}
+  .form label{margin-bottom:8px;font-size:12px}
+  .form input,.form select,.form textarea{padding:8px 10px;margin-top:3px;font-size:15px}
+  .form textarea{min-height:60px;height:60px}
+  .form .g{gap:8px}
+}
+
+
+/* ===== NEW DASHBOARD (My Activity) ===== */
+.dwrap{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:20px;align-items:start}
+.dmain,.dside{display:flex;flex-direction:column;gap:18px;min-width:0}
+.dmain .card,.dside .card{margin:0}
+.dh{font-size:16px;font-weight:700;color:#0f3d4c;margin:6px 0 0}
+.dhero{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between}
+.dwho{display:flex;gap:16px;align-items:center;min-width:0}
+.dwho .av{width:88px;height:88px;font-size:34px;border:3px solid #fff;box-shadow:0 6px 18px rgba(15,61,76,.18)}
+.dtxt h2{font-size:22px;color:#0f3d4c;margin:0 0 6px}
+.dmeta{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:13px;color:var(--mute)}
+.dmeta span{display:inline-flex;align-items:center;gap:6px}.dmeta svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.7}
+.dnums{display:flex;gap:28px;flex-wrap:wrap}
+.dnums small{display:block;font-size:12px;color:var(--mute)}
+.dnums b{font-size:26px;color:#0f3d4c;font-weight:700}.dnums i{font-size:13px;font-style:normal;color:var(--mute);font-weight:500}
+.dsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.dsum a{display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:20px;text-decoration:none;color:#0f3d4c;min-height:110px;transition:transform .15s}
+.dsum a:hover{transform:translateY(-2px)}
+.dsum small{font-size:12.5px;font-weight:600;opacity:.8}
+.dsum b{font-size:34px;font-weight:700;margin-top:auto;line-height:1.1}
+.dsum em{font-style:normal;font-size:12px;opacity:.7}
+.sc1{background:#e5f6b8}.sc2{background:#b9ece3}.sc3{background:#fbc9d3}
+.feed{display:flex;flex-direction:column;gap:6px}
+.fi{display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;text-decoration:none;color:var(--ink)}
+.fi:hover{background:#edf7f5}
+.fav{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#9fe0cc,#1b8c85);color:#fff;display:grid;place-items:center;font-weight:700;flex-shrink:0}
+.ft{display:flex;flex-direction:column;min-width:0;flex:1}.ft b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ft small{font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[data-theme="dark"] .dh,html[data-theme="dark"] .dtxt h2,html[data-theme="dark"] .dnums b{color:var(--ink)}
+html[data-theme="dark"] .fi:hover{background:rgba(255,255,255,.06)}
+@media(max-width:1100px){.dwrap{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .dwrap,.dmain,.dside{gap:8px}
+  .dhero{gap:10px}
+  .dwho{gap:10px}
+  .dwho .av{width:60px;height:60px;font-size:24px}
+  .dtxt h2{font-size:17px;margin-bottom:2px}
+  .dmeta{font-size:12px;margin-top:4px;gap:2px 10px}
+  .dnums{gap:6px;width:100%;justify-content:space-between}
+  .dnums b{font-size:19px}.dnums small{font-size:11px}
+  .dsum{gap:6px}
+  .dsum a{padding:10px;min-height:84px;border-radius:14px}
+  .dsum small{font-size:10.5px}.dsum b{font-size:24px}.dsum em{font-size:10.5px}
+  .dh{font-size:14px;margin:2px 0 0}
+}
+
+
+#gbtn{color-scheme:light;background:transparent}
+#gbtn iframe{color-scheme:light;border-radius:999px}
+`;document.head.appendChild(s);}catch(e){}})();
 /* FRONTEND: pages, forms, search, profile and talking to the backend API (/api/...) */
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -148,23 +262,32 @@ function matchTable(rows, searching) {
 /* ---------- private pages ---------- */
 const priv = {
   async dashboard() {
-    const [s, m] = await Promise.all([api('GET', '/api/stats'), api('GET', '/api/matches')]);
-    const f = fisher(), top = m[0];
-    const split = (a, empty) => a.length ? `<div class="split">${a.map(x => `<div>${esc(x.name)}<b>${x.val ?? kg(x.kg)}</b></div>`).join('')}</div>` : `<p class="empty" style="padding:4px 0">${empty}</p>`;
-    const feat = top
-      ? `<span class="tag">Best match</span><h3 style="text-align:left">${f ? 'Top buyer interest' : 'Top listing for you'}</h3>${FISH}<h2>${esc(top.species)}</h2>
-         <div class="facts"><span>• ${esc(top.location)}</span><span>• ${peso(top.price_per_kg)} per kg</span><span>• ${kg(top.quantity_kg)} available</span><span>• ${esc(f ? top.buyer_name : top.fisher_name)}</span></div>${gauge(top.score)}
-         ${f ? '' : `<a class="link" href="#/listing/${top.listing_id}">View listing</a>`}`
-      : `<h3 style="text-align:left">Top match</h3>${FISH}<p class="empty">${f ? 'Post fish and matching buyers appear here.' : 'Submit a requirement to see your best match.'}</p>`;
-    return {title: 'Dashboard', stat: `<div class="stat">${f ? 'Average price per kg' : 'Average budget per kg'}<strong>${s.avg_price ? peso(s.avg_price) : '—'}</strong></div>`, html: `<div class="grid">
-      <div class="card"><h3>${f ? 'Fish posted' : 'Fish wanted'}</h3><div class="big">${s.kg}<small> kg</small></div><div class="dots" style="--p:${s.covered}%"></div>
-        <h3>By species</h3>${split(s.by_species, 'Nothing yet.')}<h3 style="margin-top:16px">By location</h3>${split(s.by_location.map(x => ({name: x.name, val: x.pct + '%'})), 'Nothing yet.')}
-        <a class="link" href="#/${f ? 'listings' : 'requirements'}">${f ? 'Manage listings' : 'Manage requirements'}</a></div>
-      <div class="card feat">${feat}</div>
-      <div class="card"><h3>${f ? 'Buyers interested' : 'Fisherfolk matched'}</h3><div class="big">${s.people}</div>
-        <div class="mini"><h3>${f ? 'Listings with interest' : 'Requirements matched'}</h3><div class="big" style="font-size:28px">${s.covered}%<small style="font-size:12px"> ${s.covered_n} of ${s.covered_of}</small></div><div class="bar"><i style="--p:${s.covered}%"></i></div></div></div>
-      <div class="card wide2"><h3>Matching results</h3>${matchTable(m.slice(0, 5))}${m.length > 5 ? '<a class="link" href="#/matches">See all matches</a>' : ''}</div>
-      <div class="card"><h3>${f ? 'Post fish' : 'Find fish'}</h3><p class="empty">${f ? 'New listings are matched to buyer requirements right away.' : 'Tell us what you need and we will rank the best listings.'}</p><a class="btn" href="#/${f ? 'post' : 'requirement'}">${f ? 'Post fish' : 'Submit requirement'}</a>${f ? '' : ' <a class="sm" href="#/market">Browse fish</a>'}</div></div>`};
+    const [s, m, ords] = await Promise.all([api('GET', '/api/stats'), api('GET', '/api/matches'), api('GET', '/api/orders')]);
+    const f = fisher();
+    const done = ords.filter(o => o.status === 'completed'), open = ords.filter(o => o.status === 'reserved');
+    const doneTotal = done.reduce((a, o) => a + o.total, 0), openKg = open.reduce((a, o) => a + o.quantity_kg, 0);
+    const role = f ? 'Fisherfolk' : 'Fish buyer';
+    const hero = `<div class="card dhero"><div class="dwho">${av(me)}<div class="dtxt"><h2>${esc(me.name)}</h2><span class="badge">${role}</span>
+        <div class="dmeta"><span>${ico('pin')}${esc(me.location)}</span><span>${ico('phone')}${esc(me.phone)}</span></div></div></div>
+      <div class="dnums"><div><small>${f ? 'Fish posted' : 'Fish wanted'}</small><b>${s.kg}<i> kg</i></b></div>
+        <div><small>${f ? 'Buyers interested' : 'Sellers matched'}</small><b>${s.people}</b></div>
+        <div><small>${f ? 'Avg price / kg' : 'Avg budget / kg'}</small><b>${s.avg_price ? peso(s.avg_price) : '—'}</b></div></div></div>`;
+    const sum = `<h3 class="dh">${f ? 'Sales Overview' : 'Purchase Overview'}</h3><div class="dsum">
+      <a class="sc1" href="#/history"><small>${f ? 'Total sales' : 'Total spent'}</small><b>${peso(doneTotal)}</b><em>${done.length} completed ${done.length === 1 ? 'order' : 'orders'}</em></a>
+      <a class="sc2" href="#/history"><small>Open orders</small><b>${open.length}</b><em>${kg(openKg)} ${f ? 'to deliver' : 'to receive'}</em></a>
+      <a class="sc3" href="#/matches"><small>${f ? 'Buyer matches' : 'Seller matches'}</small><b>${m.length}</b><em>${s.people} ${f ? (s.people === 1 ? 'buyer' : 'buyers') : (s.people === 1 ? 'seller' : 'sellers')}</em></a></div>`;
+    const table = `<div class="card"><h3 class="dh" style="margin-top:0">Matching results</h3>${matchTable(m.slice(0, 5))}${m.length > 5 ? '<a class="link" href="#/matches">See all matches</a>' : ''}</div>`;
+    const oi = ords.slice(0, 4).map(o => `<a class="fi" href="#/history"><span class="fav">${esc((o.other_name || '?').slice(0, 1).toUpperCase())}</span>
+        <span class="ft"><b>${esc(o.species)} · ${kg(o.quantity_kg)}</b><small>${f ? 'Sold to' : 'Bought from'} ${esc(o.other_name)} · ${peso(o.total)}</small></span><span class="score ${o.status === 'completed' ? '' : 'mid'}">${esc(o.status)}</span></a>`).join('');
+    const mi = m.slice(0, Math.max(2, 6 - Math.min(4, ords.length))).map(x => {
+      const who = f ? x.buyer_name : x.fisher_name;
+      return `<a class="fi" ${f ? 'href="#/matches"' : `href="#/listing/${x.listing_id}"`}><span class="fav">${esc((who || '?').slice(0, 1).toUpperCase())}</span>
+        <span class="ft"><b>${esc(who)}</b><small>Match · ${esc(x.species)} · ${f ? kg(x.wanted_kg) : kg(x.quantity_kg) + ' at ' + peso(x.price_per_kg) + '/kg'}</small></span>${scoreTag(x.score)}</a>`;
+    }).join('');
+    const feed = (oi + mi) || `<p class="empty">${f ? 'Post fish and orders and matches appear here.' : 'Submit a requirement or browse fish to get started.'}</p>`;
+    const side = `<aside class="dside"><div class="card"><h3 class="dh" style="margin-top:0">Live Feed</h3><div class="feed">${feed}</div></div>
+      <div class="card"><h3 class="dh" style="margin-top:0">${f ? 'Post fish' : 'Find fish'}</h3><p class="empty" style="padding:0 0 10px">${f ? 'New listings are matched to buyer requirements right away.' : 'Tell us what you need and we will rank the best listings.'}</p><a class="btn" href="#/${f ? 'post' : 'requirement'}">${f ? 'Post fish' : 'Submit requirement'}</a>${f ? '' : ' <a class="sm" href="#/market">Browse fish</a>'}</div></aside>`;
+    return {title: 'My Dashboard', html: `<div class="dwrap"><div class="dmain">${hero}${sum}${table}</div>${side}</div>`};
   },
   async post(id) {
     let l = {species: '', quantity_kg: '', price_per_kg: '', min_order_kg: '', location: me.location, freshness: 'fresh', source: 'wild', delivery: 'pickup', catch_date: new Date().toISOString().slice(0, 10), notes: '', photo: ''};
