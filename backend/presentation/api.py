@@ -13,7 +13,9 @@ from application import admin, auth, orders, buyer_mgmt, fish_mgmt, google_auth,
 # the FRONTEND folder sits next to backend/
 STATIC = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend")
 STATIC_FILES = {"/style.css": "text/css", "/app.js": "application/javascript", "/i18n.js": "application/javascript",
-                "/logo.png": "image/png", "/logo-light.png": "image/png", "/favicon.png": "image/png"}
+                "/logo.png": "image/png", "/logo-light.png": "image/png", "/favicon.png": "image/png",
+                "/manifest.json": "application/manifest+json", "/sw.js": "application/javascript",
+                "/icon-192.png": "image/png", "/icon-512.png": "image/png"}
 COOKIE = "fm_session"  # renamed per port in make_server: browsers share cookies between localhost ports, which logged people out
 ROUTES = []
 
