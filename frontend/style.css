@@ -363,5 +363,11 @@ body:has(.app) #langpick{top:auto;bottom:14px}
   .nav.on{background:rgba(255,255,255,.18)}
   body:has(.app) #langpick{bottom:auto;top:8px}
   .card:has(table),.tw,.tablewrap{overflow-x:auto}
-  table{display:block;overflow-x:auto;max-width:100%}
+    table{display:block;overflow-x:auto;max-width:100%}
 }
+
+#gbtn{color-scheme:light;background:transparent}
+#gbtn iframe{color-scheme:light;border-radius:999px}
+
+#gbtn{color-scheme:light;background:transparent}
+#gbtn iframe{color-scheme:light;border-radius:999px}
